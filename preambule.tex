@@ -21,7 +21,10 @@
 \usepackage{fancyhdr}
 
 \newcounter{encompt}
-\newenvironment{exo}[1][]{\refstepcounter{encompt}\noindent{\textbf{Exercice~\theencompt}}~{\textbf{#1}}}{}
+
+\theoremstyle{definition}
+\newtheorem{exo}{Exercice}
+
 \newcommand{\refex}[1]{\thechapter.\ref{#1}}
 \pagestyle{empty}
 \newcommand{\ind}{ 1\hspace{-.55ex}\mbox{l}}

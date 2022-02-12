@@ -1,0 +1,132 @@
+\input{preambule}
+
+\begin{document}
+
+\titre{Feuille 2 : Indépendance et probabilités conditionnelles}
+
+
+\subsection*{Notion d'indépendance}
+
+\begin{exo}
+Soient $A,B,C$ des évènements. Pour chacune des assertions suivantes, donner soit une preuve,
+soit un contre-exemple.
+\begin{enumerate}
+    \item $A$ est indépendant de $A$ si et seulement si $\mathbb{P}(A)=0$ ou $1$.
+    \item $A$ est indépendant de $B$  si et seulement si $A$ est indépendant de $\overline{B}$.
+    \item Si $A$ est indépendant de $B$ et $C$, alors il l'est de $B\cup C$.
+    \item Si $A, B$ et $C$ sont indépendants, alors $A$ est indépendant de $B\cup C$.
+    \item Si $A$ est indépendant de $B$ et $B$ de $C$ et si $A$ l'est de
+    $B\cap C$, alors $C$ est indépendant de $A\cap B.$
+    \end{enumerate}
+\end{exo}
+
+\begin{exo}
+Montrer les propriétés suivantes quand elles sont vraies; dans le cas 
+con\-trai\-re, construire un contre-exemple.
+\begin{enumerate} 
+\item
+$\mathbb P(A|B)+\mathbb P(\overline{A}|B)=1.$ 
+\item
+$\mathbb P(A|B)+\mathbb P(A|\overline{B})=1.$ 
+\item
+$\mathbb P(A|B)+\mathbb P(\overline{A}|\overline{B})=1.$ 
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Montrer que si $A$ et $B$ sont deux événements, $\mathbb P(A \cap B)-\mathbb P(A)\mathbb P(B)=-\mathbb P(\overline{A} \cap B)+\mathbb P(\overline{A})\mathbb P(B)=\mathbb P(\overline{A} \cap \overline{B})-\mathbb P(\overline{A})\mathbb P(\overline{B})$.
+En déduire que si $A$ et $B$ sont indépendants, alors $\overline{A}$ et $B$ sont indépendants, et $\overline{A}$ et $\overline{B}$ sont indépendants.
+\end{exo}
+
+\subsection*{Exercices variés...}
+
+\begin{exo} On lance un dé à six faces. Est-ce que les évènements \og obtenir un
+résultat pair\fg{}  et \og obtenir un résultat divisible par 3\fg{} sont
+indépendants?
+\end{exo}
+
+
+\begin{exo} La probabilité pour qu'un étudiant $A$ résolve un certain problème est de 1/2~; pour un autre  étudiant $B$ cette probabilité est de 2/3. Quelle est la probabilité que le problème soit résolu par au moins un des deux  étudiants, s'ils travaillent séparément ?
+\end{exo}
+
+
+\begin{exo}
+On admet qu'un chasseur tue un renard d'un coup de fusil une fois
+sur trois. Six chasseurs font une battue et tirent en même temps sur le renard (on admettra que les
+tirs sont mutuellement indépendants). Calculer la probabilité que le renard soit tué.
+\end{exo}
+
+
+\begin{exo}
+Une boîte contient $r$ boules rouges et $b$ boules blanches. On tire deux boules sans remise. 
+\\
+\textbf{a.} Si la première est rouge, quelle est la probabilité que la 2ème le soit ? 
+\\
+\textbf{b.} On doit parier sur le r\'esultat du premier tirage, qui a d\'eja eu lieu en cachette, et on conna\^\i t le r\'esultat du deuxi\`eme tirage (qui a donn\'e rouge) : calculer la probabilit\'e que la premi\`ere boule ait  \'et\'e rouge, en tenant compte de cette indication.
+\end{exo}
+
+
+\begin{exo}
+Il existe deux routes entre Metz et Nancy, et deux routes entre Nancy et Épinal. Chaque route est bloquée par la neige avec probabilité $p$, indépendamment des autres routes. Quelle est la probabilité qu'on puisse aller de Metz à Épinal ?
+\end{exo}
+
+
+\begin{exo} 
+Mes voisins ont deux enfants. Quelle est la probabilité que les
+deux enfants soient des filles :
+\begin{enumerate}
+\item  si je n'ai pas d'autre information,
+\item  sachant que j'ai rencontré l'aînée des deux enfants et que
+c'est une fille,
+\item  sachant que l'un des deux enfants est une fille.
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}Soit $B_{1}$ et $B_{2}$ deux bo\^\i tes contenant respectivement $r_{1}$ boules rouges et $n_{1}$ boules noires, $r_{2}$ boules rouges et $n_{2}$ boules noires. On tire au hasard (c'est-\`a-dire avec  \'equiprobabilit\'e) l'une des 2 bo\^\i tes, et ensuite, dans la bo\^\i te choisie, on tire une boule, les choix  \`a  l'int\'erieur de la bo\^\i te  \'etant  \`a  nouveau  \'equiprobables. Sachant qu'on a tir\'e une boule rouge, quelle est la probabilit\'e de l'avoir tir\'ee de la bo\^\i te $B_{1}$ ?
+\end{exo}
+
+
+\begin{exo} \`A une question d'examen, quatre r\'eponses possibles sont propos\'ees au
+candidat, et une seule est correcte. Si un \'etudiant a travaill\'e cette question, il est
+s\^ur de r\'epondre correctement, sinon il choisit une des 4 r\'eponses au hasard. Le
+programme de l'examen comporte 1000 questions et l'\'etudiant en a travaill\'e 600.
+
+L'\'etudiant ayant r\'epondu correctement \`a la question pos\'ee, quelle est la probabilit\'e
+pour qu'il ait travaillé cette question ?
+\end{exo}
+
+
+\begin{exo}
+Dans un restaurant de 50 places, la probabilit\'e pour qu'une
+personne ayant r\'eserv\'e une table, ne vienne pas est de 1/5. Un
+jour, le patron a pris 52 r\'eservations. Quelle est la probabilit\'e
+qu'il se trouve dans une situation embarrassante ?
+\end{exo}
+
+\begin{exo} Combien de fois faut-il lancer un d\'e \'equilibr\'e pour que la probabilit\'e d'obtenir au moins une fois un 6 soit sup\'erieure \`a 90 \% ? (les lancers successifs
+sont suppos\'es ind\'ependants)
+\end{exo}
+
+
+\begin{exo} Une urne contient $N$ jetons num\'erot\'es de 1  \`a $N$. On tire au hasard $n$ jetons (avec $1\leq n\leq N$) de cette urne, sans remise. On appelle $X$ le plus petit num\'ero tir\'e. Quelle est la probabilit\'e que $X$ soit  \'egal  \`a $k$, en fonction de $k$, pour $k$ compris entre 1 et $N-n+1$ ?
+\end{exo}
+
+\begin{exo} Une personne sur 10 a une propension g\'en\'etique
+\`a devenir alcoolique. Si c'est le cas, elle deviendra alcoolique avec probabilité 0,3; sinon,
+elle deviendra alcoolique avec probabilité 0,05 (donn\'ees imaginaires !).
+
+Sachant qu'une personne est alcoolique, quelle est la probabilité qu'elle n'ait pas de propension
+g\'en\'etique \`a le devenir ?
+\end{exo}
+
+\begin{exo}
+L'{\'e}tudiant X vient en TD deux fois sur trois, et quand il vient, il arrive une fois sur deux {\`a} l'heure, les autres fois il a au moins vingt minutes de retard. Il est 8h40, le TD commence {\`a} 8h30. Quelle chance a le professeur de voir encore arriver X?
+\end{exo}
+
+
+\begin{exo}Toutes les minutes un phare  \'emet un signal lumineux avec probabilit\'e $p$ ($0<p<1$). Un observateur lointain d\'etecte le signal, lorsque celui-ci est  \'emis, avec la probabilit\'e $\ell$. Calculer la probabilit\'e qu'\`a  l'instant $k$, l'observateur observe pour la premi\`ere fois le signal.
+\end{exo}
+
+\end{document}
