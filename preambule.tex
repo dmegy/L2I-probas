@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc} % ncessaire sur PC
+\usepackage[T1]{fontenc}
+
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage{ifthen}
+\usepackage{verbatim}
+\newboolean{enonce} 
+%\setboolean{enonce}{false}
+\setboolean{enonce}{true}
+\newboolean{indication} 
+%\setboolean{indication}{true}
+\setboolean{indication}{false}
+%\usepackage{eepic}
+
+\usepackage[dvips]{graphicx}
+
+\usepackage[english,frenchb]{babel}
+%\usepackage{eurosym}
+\usepackage{fancyhdr}
+
+\newcounter{encompt}
+\newenvironment{exo}[1][]{\refstepcounter{encompt}\noindent{\textbf{Exercice~\theencompt}}~{\textbf{#1}}}{}
+\newcommand{\refex}[1]{\thechapter.\ref{#1}}
+\pagestyle{empty}
+\newcommand{\ind}{ 1\hspace{-.55ex}\mbox{l}}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\newcommand{\Card}{\mathrm{Card \,}}
+\def\N{\mathbb N}
+\def\Sn{\frak{S}_n}
+
+\newcommand{\titre}[1]{\pagestyle{fancy}\lhead{Probabilit\'es \hfill L2 Informatique -- S4} 
+\rhead{}\begin{center}
+\textbf{#1}
+\end{center}\bigskip}

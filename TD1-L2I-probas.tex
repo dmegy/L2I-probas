@@ -1,0 +1,152 @@
+\input{preambule}
+
+\begin{document}
+
+\titre{Feuille 1 : Introduction aux probabilités et à la combinatoire}
+
+
+\begin{exo} Considérons un jeu de 5 cartes, numérotées de 1 à 5. 
+\begin{enumerate}
+\item
+Première expérience aléatoire~: je pioche une carte et je relève son
+numéro. Donner l'univers correspondant, et la partie correspondant à
+l'événement \og le résultat obtenu est strictement plus grand que 3\fg.
+\item
+Deuxième expérience aléatoire~: je pioche une première carte, et,
+sans la remettre, j'en pioche une deuxième~; je relève, dans l'ordre,
+les deux numéros obtenus. Donner l'univers correspondant, et la partie correspondant à
+l'événement \og la deuxième carte a un numéro plus grand que la
+première\fg.
+\item
+Troisième expérience aléatoire~: je pioche deux cartes en même
+temps, et je relève, sans ordre, les deux numéros obtenus. Donner l'univers correspondant, et la partie correspondant à
+l'événement \og les deux numéros sont supérieurs ou égaux à 3\fg.
+\item
+Quatrième expérience aléatoire~: je pioche une première carte, et,
+après l'avoir remise, j'en pioche une deuxième~; je relève, dans l'ordre,
+les deux numéros obtenus. Donner l'univers correspondant, et la partie correspondant à
+l'événement \og la deuxième carte a un numéro strictement plus grand que la
+première\fg.
+\end{enumerate}
+
+ \emph{Bien remarquer les différences entre les trois
+dernières expériences~: avec ou sans remise, ordonnée ou
+non. Profitons-en pour rappeler la différence entre un  \emph{couple} et
+une \emph{paire}~: un couple se note entre parenthèses, et ses
+éléments sont ordonnés. Ainsi $(2,7)$ et $(7,2)$ sont deux couples
+différents. En revanche, une paire est une partie à deux éléments
+non ordonnée~: il n'y a qu'une seule paire composée des éléments 7 et
+2, qu'on note entre accolades $\{2,7\}$ ou $\{7,2\}$.}
+\end{exo}
+
+
+\begin{exo}
+Deux personnes A et B entrent dans une pièce où il y a 3 bancs de 2 places et s'assoient ``au hasard''. Quelle est la probabilité $p$ que A et B soient assises sur le même banc ? On peut par exemple :
+\begin{enumerate}
+\item numéroter les places de 1 \`a 6. A tire alors un numéro, le garde et B tire alors un numéro parmi les 5 restants,
+\item num\'eroter les bans de 1 \`a 3. A tire alors un num\'ero, le remet puis B tire \`a son tour un des trois num\'eros.
+\end{enumerate}
+
+Montrer que les 2 fa\c cons de proc\'eder conduisent \`a 2 valeurs diff\'erentes de $p$.  
+
+ \emph{Bilan : quand on rencontre l'expression ``choisir au hasard'', il est important d'expliciter clairement les hypothèses d'équiprobabilité sous-entendues.}
+\end{exo}
+
+
+\begin{exo}
+\begin{enumerate}
+\item On lance trois pièces de monnaie. Calculer les probabilités des
+évènements suivants : $A = \{\text{il y a exactement 2 ``faces''} \}$ et 
+$B = \{\text{il y au moins 2 ``faces''} \}$.
+\item On lance deux dés non truqués, un rouge et
+un bleu. Quelle est la probabilité que le résultat du dé rouge soit
+pair et le résultat du dé bleu soit divisible par 3~?
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}[(Paradoxe de Galton)] On lance trois fois de suite une pièce équilibrée. Que pensez- vous du raisonnement suivant ?
+``A coup sûr, il y a deux lancers identiques. Par symétrie, le troisième a la même probabilité d'être un pile ou un face. Donc la probabilité d'avoir trois lancers identiques est 1/2.''
+\end{exo}
+
+
+\begin{exo}[(Probl{\`e}me de Galil{\'e}e)]
+Le prince de Toscane demande un jour {\`a} Galil{\'e}e : ``Pourquoi lorsqu'on jette
+ trois d{\'e}s obtient-on plus souvent la somme $10$ que la somme $9$, bien que
+ ces deux sommes soient obtenues de six fa{\c c}ons diff{\'e}rentes ?''
+  
+Construire un mod{\`e}le probabiliste, traduire la question pos{\'e}e en terme de probabilit\'es et r\'epondre \`a la question.
+Quelle erreur commet implicitement le prince de Toscane ?
+\end{exo}
+
+
+\begin{exo} 
+On se propose dans cet exercice de répondre aux questions suivantes sur 
+les dénombrements élémentaires.
+\\
+\textbf{a.}
+{\sl Suites avec répétition, tirages avec remise}.
+      \begin{enumerate}
+      \item Combien peut-on écrire de mots de $n$ lettres avec un alphabet 
+            de $r$ lettres ?
+      \item Combien y a-t-il de façons de ranger $n$ boules numérotés dans $r$
+            boites ?
+      \item Soit une urne comportant $n$ boules numérotées, 
+            on tire $r$ fois une boule dans l'urne, on note son numéro (à la $i$--ème 
+            position d'une liste lors du $i$--ème tirage), puis on la remet dans
+            l'urne. Combien y a-t-il de listes différentes ?
+      \end{enumerate}
+\textbf{b.} 
+{\sl Suites sans répétition, tirages sans remise}.
+      \begin{enumerate}
+      \item Même contexte qu'en a-(1) mais cette fois, on comptabilise uniquement
+            les mots comportant des lettres toutes distinctes.
+      \item Même contexte qu'en a-(2) mais on ne peut mettre qu'une boule par boite
+            au maximum.
+      \item Même contexte qu'en a-(3) sauf que l'on ne remet pas la boule
+            dans l'urne à chaque tirage (tirage sans remise).
+      \end{enumerate}
+\textbf{c.} 
+{\sl Combinaisons}.
+      \begin{enumerate}
+      \item Combien y a-t-il de façons de ranger $n$ boules numérotés dans $2$
+            boites de telle façon qu'il y en ait $k$ dans l'une et $n-k$ dans l'autre ?
+      \item Avec un alphabet de $2$ lettres, combien de mots de $n$ lettres  
+            comportant $k$ fois l'une et $n-k$ fois l'autre, peut-on former ?
+      \end{enumerate}
+\end{exo}
+
+
+
+\begin{exo}
+Combien de mots peut-on former en m\'elangeant les lettres du mot PARIS ? M\^eme question avec NANCY, TOULOUSE et NARBONNE.
+\end{exo}
+
+
+\begin{exo}
+On tire d'un seul coup trois cartes d'un jeu de 32. Calculer la probabilit\'e des \'ev\`enements suivants : 
+\begin{enumerate}
+\item la main est compos\'ee de trois as, 
+\item la main est compos\'ee de 2 as et une dame, 
+\item la main est compos\'ee d'au moins un valet.
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Dans une assembl\'ee de $n$ personnes, on note la date d'anniversaire de chacun.
+\begin{enumerate}
+\item Proposer un ensemble $\Omega$ pour coder l'ensemble des r\'esultats possibles, et donner son cardinal.
+\item Calculer le cardinal des ensembles suivants:
+\begin{enumerate}
+\item tous les participants ont la m\^eme date d'anniversaire,
+\item Pierre et Paul ont la m\^eme date d'anniversaire,
+\item toutes les personnes ont des dates d'anniversaires diff\'erentes,
+\item il y a au moins deux personnes qui ont la m\^eme date d'anniversaire.
+\end{enumerate}
+\item On note $p_n$ la probabilit\'e pour que deux personnes au moins de cette assembl\'ee aient 
+leur anniversaire le m\^eme jour. Calculer une valeur approch\'ee de cette probabilit\'e pour $n=23$, $n=41$ et $n=57$.
+\end{enumerate}
+\end{exo}
+
+\end{document}
