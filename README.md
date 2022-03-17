@@ -1,6 +1,19 @@
 L2I-probas
 ==========
 
+Informations pour le partiel :
+---
+
+Infos déjà données en CM et TD mais au cas où :
+
+Programme :  
+- contenu des deux premières feuilles de TD
+- contenu de ce qui a été fait en CM, y compris ce qui a été fait sur les variables aléatoires, même si pas consolidé en TD (donc les définitions, exemples etc). Ceci correspond aux deux premiers chapitres (pdf disponibles ci-dessous), et, dans le troisième chapitre, à la section 1. 
+
+(On a fait l'indépendance des variables mais le partiel ne portera pas dessus : notez que l'indépendance d'évènements, elle, est bien au programme.)
+
+ATTENTION : les calculatrices et documents ne sont pas autorisés.
+
 Contenu du repo :
 -----
 
