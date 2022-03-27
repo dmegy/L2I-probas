@@ -1,0 +1,137 @@
+\input{preambule}
+
+\begin{document}
+
+\titre{Feuille 4 : variables aléatoires à densité}
+
+
+\begin{exo} Dans un parc naturel, un guide propose quotidiennement l'observation de chamois venant s'abreuver dans un lac au coucher du soleil. Le temps d'attente $T$ avant l'arrivée des premiers animaux, exprimé en heures, suit une loi uniforme sur $[0,1]$. Calculer les probabilités suivantes :
+$$\P(T>0.5), \hspace{1cm} \P(0.2<T<0.6), \hspace{1cm} \P(T=0.6).$$
+\end{exo}
+
+\begin{exo} Un livreur a promis de passer chez un client entre 10h et 11h30. On suppose que la probabilité de son passage est uniformément répartie.\\
+\noindent\textbf{a.} Quelle est la probabilité qu'il arrive avant 10h30min ?\\
+\noindent\textbf{b.} Quelle est la probabilité qu'il arrive entre 10h20 min et 10h40min ?\\
+\noindent\textbf{c.} Quelle est la probabilité qu'il arrive pile à 10h45min ?\\
+\noindent\textbf{d.} Sachant que le client a déjà attendu le livreur 20 minutes, quelle est la probabilité qu'il arrive dans les dix prochaines minutes ?
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+Le temps, mesuré en heures, nécessaire pour réparer une certaine machine suit la loi exponentielle de param\`etre $\lambda=1/2$.\\
+\noindent\textbf{a.} Quelle est la probabilité que le temps de réparation excède 1 heure ? Qu'il excède 2 heures ?\\
+\textbf{b.} Quelle est la probabilité qu'une réparation prenne au moins 10 heures, étant donné que sa durée a déjà dépassé neuf heures ? Commenter.
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+
+\noindent\textbf{a.} Montrer que l'application $f(x)=3x^2$ définit bien une densité sur $[0,1]$.\\
+\noindent\textbf{b.} Soit $X$ une variable aléatoire réelle de densité $f$. Déterminer la fonction de répartition de $X$.\\
+\noindent\textbf{c.} Calculer les probabilités suivantes :
+$$\P(X\geq 0.5), \hspace{1cm} \P(0.3\leq X<0.6), \hspace{1cm} \P(X=0.2).$$
+\noindent\textbf{d.} Déterminer l'espérance de $X$.
+\end{exo}
+
+\bigskip
+
+\begin{exo} Soit $X$ une variable aléatoire continue, dont la densité est donnée par :
+$$f(x)={c\over x^3} \mbox{ si } x\geq 1, \hspace{0.5cm} \mbox{ et } \hspace{0.5cm} f(x)=0 \mbox{ si } x<1.$$
+\begin{enumerate}
+\item D\'eterminer la valeur de la constance $c$.
+\item Déterminer l'expression de la fonction de répartition $F_X$ de la variable $X$, et esquisser sa courbe représentative.
+\item Calculer $\E(X).$
+\end{enumerate}
+\end{exo}
+
+\bigskip
+
+\begin{exo} On consid\`ere une v.a. $X$ dont la densit\'e de probabilit\'e est donn\'ee par $f(x)=Ce^{-|x|}$.\\
+\noindent\textbf{a.} D\'eterminer la valeur de la constante $C$ de mani\`ere \`a ce que la densit\'e soit correctement normalis\'ee.\\
+\noindent\textbf{b.} Calculer la moyenne et la variance de $X$.
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+Soit $X$ une variable al{\'e}atoire r{\'e}elle admettant pour densit{\'e} $f$ et soit $a>0$.
+Montrer que $Y=aX$ est une variable al{\'e}atoire r{\'e}elle admettant pour 
+densit{\'e} $g(x)=\frac{1}{a} f(\frac{x}{a})$.
+\end{exo}
+
+\bigskip
+
+\begin{exo}[(lois gaussiennes)]
+On rappelle que
+$$\int_{\mathbb R} \frac{1}{\sqrt{2\pi}} \exp(-x^2/2) dx=1.$$
+Soit $X$ une variable al\'eatoire de densit\'e $f$ d\'efinie par
+$$\forall x \in \mathbb R \quad f(x)=\frac{1}{\sqrt{2\pi}} \exp(-x^2/2).$$
+Soit $m \in \mathbb R$ et $\sigma \in \mathbb R_+^*$. On pose 
+$$Y=\sigma X +m.$$
+D\'eterminer la densit\'e de $Y$ (on pourra travailler avec sa fonction de r\'epartition, m\^eme si on ne sait pas en donner une expression explicite).
+\end{exo}
+
+\bigskip
+
+\begin{exo}Soit $Z$ une variable aléatoire suivant la loi $\mathcal N(0,1)$. \`A partir de l'approximation $\P(Z<1)=0.84$, déterminer sans calculatrice les probabilités suivantes.\\
+\noindent\textbf{a.} $\P(X<10)$ pour X suivant la loi $\mathcal N(8,4)$\\
+\noindent\textbf{b.} $\P(X\geq 0)$ pour X suivant la loi $\mathcal N(-5,25)$\\
+\noindent\textbf{c.} $\P(X<0)$ pour X suivant la loi $\mathcal N(5,25)$\\
+\noindent\textbf{d.} $\P(1<X<5)$ pour X suivant la loi $\mathcal N(5,16)$\\
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+Soit $X$ une variable al\'eatoire de loi exponentielle de param\`etre $1$. On pose $Y=\min (X,1)$. 
+\begin{enumerate}
+\item D\'eterminer la fonction de r\'epartition de $Y$
+\item $Y$ est-elle une variable al\'eatoire discr\`ete ? \`a densit\'e ?
+\end{enumerate}
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+Soit $U$ une variable al\'eatoire de loi uniforme sur $]0,1[$.
+On pose $X=[1/U]$ (o\`u $[.]$ d\'esigne la partie enti\`ere).
+D\'eterminer la loi de $X$.
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+Soit $U$ une variable al\'eatoire de loi uniforme sur $]0,1[$.
+On pose $X=1+[- \ln(U)]$ (o\`u $[.]$ d\'esigne la partie enti\`ere).
+D\'eterminer la loi de $X$ (on pourra reconna\^itre une loi classique).
+\end{exo}
+
+\bigskip
+
+\begin{exo}[(Loi de Cauchy, simulation)]
+\begin{enumerate}
+\item
+Pour quelle valeur de $C$ la fonction $f(x)=\frac{C}{1+x^2}$ est-elle une
+densit{\'e} de probabilit{\'e}?
+\\
+On consid{\`e}re alors $X$ une variable al{\'e}atoire r{\'e}elle admettant cette densit{\'e}.
+On dit alors que $X$ suit la loi de Cauchy.
+%\item
+%Pour quelles valeurs de $\alpha \,$ $\mathbb{E}(|X|^{\alpha})$ est-elle finie?
+\item
+Calculer la fonction de r{\'e}partition $F$ de $X$, et la tracer.
+\item
+Montrer que $F$ est bijective de $\mathbb R^+$ dans $]0,1[$  et calculer son
+inverse $G$.
+\item
+Montrer que si $U$ est une variable al{\'e}atoire de loi uniforme sur $[0,1]$,
+alors $Z=G(U)$ suit la loi de Cauchy. On pourra d\'eterminer la fonction de r\'epartition de $Z$.
+\item
+En d{\'e}duire un proc{\'e}d{\'e} de
+simulation de $X$.
+\end{enumerate}
+\end{exo}
+
+\end{document}
