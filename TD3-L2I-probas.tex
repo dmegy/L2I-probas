@@ -1,0 +1,164 @@
+\input{preambule}
+
+\begin{document}
+
+\titre{Feuille 3 : variables aléatoires discrètes}
+
+
+\begin{exo}
+\begin{enumerate}
+\item On lance deux dés équilibrés. On note $X_1$ le résultat du premier dé, et $X_2$ le résultat du deuxième dé. Déterminer la loi de $X_1-X_2$.
+\item On lance un dé équilibré, au plus $5$ fois, en s'arrêtant dès qu'on obtient $6$. Donner la loi du nombre de lancers effectués.
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Un livre de 350 pages contient 450 erreurs d'impression réparties au hasard. Soit $X$
+la variable aléatoire du nombre d'erreurs dans une page déterminée.
+\\
+\textbf{a.} Quelle est la loi de $X$?
+\\
+\textbf{b.} Donner une expression de la probabilité qu'il y ait au moins 3 erreurs dans
+      une page déterminée.
+\end{exo}
+
+
+\begin{exo}
+Montrer que si $X$ est une v. a. de loi géométrique, elle vérifie 
+la propriété d'absence de mémoire suivante: $\forall k\in\N,\;\forall n\in\N,\quad \P(X>n+k\mid X>n)=\P(X>k).$\\
+Interpréter ce résultat en considérant une suite d'épreuves répétées.
+\end{exo}
+
+
+\begin{exo} Soient $X$ et $Y$ deux v. a. indépendantes de loi uniforme sur $\{0,1,2,\cdots,9\}$.
+
+\noindent\textbf{a.} Calculer $\P(X=Y)$.
+
+\noindent\textbf{b.} Déterminer la loi de $X+Y$.
+%
+%\noindent\textbf{c.} Soient $U=\min(X,Y)$ et $V=X-Y$. Calculer les lois de $U$ et $V$. %Calculer les lois de $(U,V)$, $U$ et $V$. 
+%Les variables $U$ et $V$ sont-elles indépendantes ?
+\end{exo}
+
+
+\begin{exo} 
+On lance deux dés. On note $X$ le plus grand des numéros obtenus, et $Y$
+le plus petit.
+
+\noindent
+\textbf{a.} Déterminer les lois de $X$ et de $Y$. Ces deux variables aléatoires
+sont-elles indépendantes~?\\
+\noindent
+\textbf{b.} Calculer $\E(X)$ et $\E(Y)$, et vérifier que $\E(X)+\E(Y)=7$. Comment aurait-on pu retrouver ce résultat de manière plus simple ?\\
+\noindent
+\textbf{c.} Calculer $V(X)$ et $V(Y)$.
+\end{exo}
+
+
+\begin{exo}
+Soit $X$ une variable aléatoire discrète d'espérance et de variance finies et
+$Y$ une autre v. a. telle que $Y = aX + b$. Calculer $\E({Y})$ et $V({Y})$ en fonction
+de $\E(X)$ et $V(X)$.
+\end{exo}
+
+
+\begin{exo} \begin{enumerate}
+\item Déterminer et tracer la fonction de répartition de la loi uniforme sur $\{0,\dots,n\}$ et de la loi géométrique de paramètre $p$.
+\item Calculer l'espérance et la variance d'une variable aléatoire qui suit une loi uniforme sur l'ensemble $\{0,1,\ldots,n\}$.
+\item Calculer l'espérance d'une variable aléatoire qui suit une loi géométrique de paramètre $p$.
+%\item Calculer l'espérance d'une variable aléatoire qui suit une loi de Poisson de paramètre $\lambda$.
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}Soient $X$ et $Y$ deux v. a. indépendantes, et de même loi :
+$$\P(X=1)=\P(X=2)=\P(X=3)=\P(Y=1)=\P(Y=2)=\P(Y=3)=1/3.$$ 
+On considère deux nouvelles v.a. $Z=X+Y$ et $T=X-Y$.
+
+\begin{enumerate}
+\item Donner les lois de $Z$ et $T$.
+\item Montrer que les v.a. $Z$ et $T$ ne sont pas indépendantes.
+\item Calculer $\E(Z),\E(T)$ et $\E(ZT)$ (on remarquera que $\E(ZT)=
+\E(Z)\E(T)$ bien que $Z$ et $T$ ne soient pas indépendantes).
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo} 
+Trois amis se retrouvent à une terrasse ensoleillée et commandent 3 cafés. Chacun d'eux met dans sa tasse 2 sucres avec probabilité ${1\over 6}$, $1$ sucre avec probabilité ${1\over 3}$, et pas de sucre avec probabilité ${1\over 2}$. Leurs choix sont bien entendu indépendants. On note $X_3$ le nombre de sucres consommés
+par les 3 clients, et $Y$ le nombre de sucres consommés par le plus âgé.\\
+\noindent
+\textbf{a.} Donner la moyenne et la variance de $X_3$ et $Y$. \\ 
+\noindent
+\textbf{b.} Ces variables aléatoires sont-elles indépendantes ?
+\end{exo}
+
+
+\begin{exo}Soient $X,Y$ deux v. a. indépendantes prenant un nombre
+fini de valeurs, respectivement $(x_i)_{i=1,\ldots,n}$ et $(y_j)_{j=1,\ldots,m}$. 
+En considérant toutes les valeurs possibles pour le couple
+$(X,Y)$, montrer que $\E(XY)=\E(X)\E(Y)$.
+\end{exo}
+
+
+\begin{exo} Une puce se déplace par sauts successifs sur les sommets A, B, C, et le centre de gravité O d'un triangle équilatéral. Au temps $t=0$, elle est en O. Puis elle saute en l'un des points A, B ou C de façon équiprobable. Par la suite, elle saute au temps $t=n$ du point où elle se trouve en l'un des autres points de façon équiprobable.
+\\
+\textbf{a.} Calculer la probabilité qu'elle revienne en O pour la première fois au temps $t=n$.
+\\
+\textbf{b.} Calculer la probabilité de l'événement : ``la puce revient en O''. Commenter.
+\end{exo}
+
+
+\begin{exo} Un examen consiste en 20 questions auxquelles il faut répondre par oui ou par non ; 
+chaque réponse juste est notée 1 point et chaque réponse fausse, 0 point. 
+Un étudiant répond entièrement au hasard : sa note finale est une variable aléatoire $X$.
+\\
+\textbf{a.} Soit $X_k$ la note qu'il obtient à la $k$--ième question : calculer 
+$\E(X_k)$ et $V(X_k)$.
+\\
+\textbf{b.} Exprimer $X$ en fonction des $X_k$ ; en déduire $\E(X)$ et $V(X)$.
+\\
+\textbf{c.} Donner la loi de $X$ ; calculer la probabilité pour l'étudiant d'avoir une note inférieure à 3. 
+\\
+\textbf{d.} Un étudiant sérieux estime qu'il donnera une réponse exacte à chaque question avec une probabilité de 0,8. 
+Quelle est la loi de sa note, son espérance et sa variance ? 
+\end{exo}
+
+
+\begin{exo} Soit $X = (X_1,X_2)$ une v.a. discrète à valeur dans $E=E_1\times E_2$, les $E_i$ étant finis ou dénombrables. La loi de $X$ est déterminée par la donnée, pour tout couple $(i,j)$ de $E$, de :
+$$
+\P({X_1=i \text{ et } X_2=j}) =: p_{i,j}.
+$$
+\noindent \textbf{a.} Calculer les lois de $X_1$ et $X_2$ en fonction de $p_{i,j}$.
+
+\noindent \textbf{b.} On suppose que $E_1=E_2$, calculer $\P({X_1=X_2})$.
+
+\noindent\textbf{c.} On suppose à partir de cette question que $E_i=\N$. 
+Calculer la loi de $X_1+X_2$ en fonction de $p_{i,j}$.
+
+\noindent\textbf{d.} \textit{Application}: pour $\lambda$ et $\mu$ positifs stricts, $X_1$ et $X_2$ indépendantes, et 
+$$
+\P({X_1=k}) = e^{-\lambda}\frac{\lambda^k}{k!}, \qquad 
+\P({X_2=k}) = e^{-\mu}\frac{\mu^k}{k!}, \qquad k\geq 0. 
+$$
+Calculer $p_{i,j}$ puis donner une expression simple de la loi de $X_1+X_2$.
+\end{exo}
+
+
+\begin{exo} Dans une promotion de $n$ étudiants, chaque étudiant a une probabilité $p$ de réussir les épreuves écrites et d'être ainsi admis à passer l'oral. Chacun de ceux qui passe l'oral a une probabilité $a$ de le réussir. On note $X$ le nombre d'étudiants admis à passer l'oral, et $Y$ le nombre d'étudiants obtenant finalement le diplôme.
+
+\noindent\textbf{a.} Quelle est la loi de $X$ ? Sachant que $X=k$, quelle est la loi de $Y$ ?
+
+\noindent\textbf{b.} Donner la loi jointe $p_{k,l}$ de $(X,Y)$. En déduire la loi de $Y$.
+\end{exo}
+
+
+\begin{exo} Un assistant distrait range $n$ lettres au hasard  dans les enveloppes qu'il avait préalablement remplies. On note $N$ la variable aléatoire représentant le nombre de courriers qui arrivent effectivement à leur destinataire.
+Calculer $\E(N)$.
+%\textit{Question subsidiaire:} Calculer $V{N}$.  
+%\\
+%\textit{Question à $1\,000$ euros :} Calculer la loi de $N$. Calculer la loi limite de $N$.
+\end{exo}
+
+\end{document}
