@@ -1,0 +1,169 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[margin=2cm]{geometry}
+\usepackage[francais]{babel}
+
+\usepackage{mathtools,amssymb,amsthm,comment,xcolor}
+\renewcommand{\P}{\mathbb P}
+
+\theoremstyle{definition}
+\newtheorem{exo}{Exercice}
+
+% pour afficher les solutions : 
+\newenvironment{solution}{\begin{quote}\color{teal}}{\end{quote}}
+% pour masquer les solutions:
+%\excludecomment{solution}
+
+
+\begin{document}
+\noindent Licence d'informatique \hfill Faculté des sciences de Nancy\\
+\noindent\rule{\linewidth}{1pt}
+\begin{center}
+Probabilités et statistiques\\
+Épreuve du 21 mars 2022\\
+Durée 1h30 --- Calculatrices et documents interdits\\
+Attention : toutes les réponses doivent être justifiées.
+\end{center}
+\noindent\rule{\linewidth}{1pt}
+
+
+
+%\begin{exo}
+%Un jeu de poker se compose de $52$ cartes ($4$ couleurs et $13$ valeurs pour chaque couleur).
+
+%Un \emph{full house} est une main de cinq cartes formée d'un brelan et d'une paire, c'est-à-dire trois cartes d'une même valeur, et deux autres cartes d'une autre valeur. Par exemple, trois rois et deux $10$.
+
+%Combien y a-t-il de \emph{full house} dans un jeu ?
+%\end{exo}
+
+
+
+\begin{exo}
+Combien le nombre $3600$ possède-t-il de diviseurs positifs ? (Rappel-exemple : les diviseurs positifs de $12$ sont $1$, $2$, $3$, $4$, $6$ et $12$.)
+% 45 diviseurs : 5*3*3
+
+\begin{solution}
+Pour comprendre un peu comment ça marche, on peut bien sûr traiter quelques exemples, par exemple les entiers inférieurs à $20$. Normalement on s'aperçoit que la réponse est liée à la décomposition du nombre en facteurs premiers.
+
+Ici, on a $3600=100\times 36=2^4\times 3^2\times 5^2$. Un diviseur positif de ce nombre doit s'écrire 
+\[ d= 2^p3^q5^r,\]
+avec $0\leq p\leq 4$, $0\leq q\leq 2$ et $0\leq r\leq 2$, c'est-à-dire $(p,q,r) \in \{0,1,2,3,4\}\times\{0,1,2\}\times \{0,1,2\}$. On en déduit qu'il y a $5\times 3\times 3$ choix pour le triplet $(p,q,r)$ et donc pour le diviseur.
+
+Finalement, il y a $45$ diviseurs.
+
+Note : au pire du pire et comme je l'ai recommandé lors ds CM, on pouvait compter les diviseurs à la main. D'une part, tous les points sont donnés en cas de résultat correct, d'autre part commencer à compter les diviseurs  donnera sans doute une idée.
+\end{solution}
+\end{exo}
+
+
+\begin{exo}
+Combien d'anagrammes possède le mot ANAGRAMME ? (C'est-à-dire, combien de suites de lettres  peut-on obtenir en permutant les lettres du mot ?)
+
+\begin{solution}
+Il y a deux M et trois A dans le mot ANAGRAMME.  Voici deux façons de rédiger la solution.
+\begin{enumerate}
+\item Pour construire une suite de lettres contenant les mêmes lettres, on commence par placer les A, autrement dit on décide de leur emplacement : il y a $\binom{9}{3}=9\times 8\times 7 /6 = 12\times 7=84$ choix. Ensuite, on place les M : il y a $\binom{6}{2}=15$ choix. 
+Ensuite, on place les quatre lettres restantes (N, G, R, E), et il y a $4!=24$ façons de le faire.
+Finalement, il y a $84\times 15\times 24=30240$ anagrammes du mot ANAGRAMME.
+\item On peut distinguer artificiellement les lettres qui sont semblables, par exemple en notant M' le second M, et en notant A, A' et A'' pour les trois lettres A. Il y a alors $9!$ façons de placer ces neuf lettres, et on doit diviser par $2!=2$ pour tenir compte des permutations des deux lettres M qui donneront au final le même mot, et aussi diviser par $3!$ pour tenir compte des permutations des trois lettres A. Finalement, on obtient
+\[ \frac{9!}{2!3!} = \frac{9!}{2\times 2\times 3} = 9\times 8\times 7\times 6\times 5\times 2 = 30240\]
+\end{enumerate}
+
+\end{solution}
+\end{exo}
+
+
+\begin{exo}
+Combien y a-t-il de nombres à trois chiffres dont les chiffres sont distincts et apparaissent dans l'ordre croissant, comme $268$ ? 
+
+Bonus : et de nombres à $N$ chiffres, avec la même contrainte et $N$ quelconque ?
+
+\begin{solution}
+Comme les chiffres doivent être rangés par ordre croissant, le chiffre $0$ ne peut pas apparaître. 
+Pour construire un tel nombre, il suffit  en réalité de choisir les trois chiffres qui vont le composer, parmi les chiffres de $1$ à $9$. Il y a donc $\binom{9}{3}=\frac{9\times 8\times 7}{3\times 2}=12\times 7=84$ tels nombres.
+
+Bonus : pour un nombre à $N$ chiffres, il y aura $\binom{9}{N}$ possibilités. Noter que si $N=9$ il n'y a qu'un seul choix à savoir $123456789$, et que si $N>9$, il n'y a aucun choix.
+\end{solution}
+\end{exo}
+
+
+\begin{exo}
+Un \emph{monôme} est un produit de variables. Le nombre de facteurs dans ce produit est le \emph{degré} du monôme.
+Par exemple $x^2zy^3$ est un monôme de degré six car le produit contient six facteurs : $x\times x\times y\times y\times y \times z$. Noter que $xy^5$ et $x^6$ sont deux autres monômes de degré six sur les variables $x$, $y$ et $z$ : toutes les variables disponibles n'ont pas forcément besoin d'apparaître dans chaque monôme.
+\begin{enumerate}
+\item On fixe les variables $x$, $y$ et $z$. Dénombrer tous les monômes de degré quatre sur ces trois variables.
+\item On fixe maintenant deux entiers $d$ et $n$ strictement positifs, et $n$ variables $x_1, x_2, \dots x_n$. Dénombrer les monômes de degré $d$ sur ces $n$ variables. (On veut une formule en fonction de $n$ et de $d$. Indication : vérifier la formule sur des exemples concrets.)
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+\item Le plus simple est de compter les monômes à la main, éventuellement en commençant par des exemples plus simples pour se faire la main. Par exemple, en degré trois à deux variables, les monômes sont $x^3, x^2y, xy^2, y^3$. En degré quatre à trois variables, on a les monômes suivants (groupés suivant leur degré en $x$) :
+\[
+x^4,\quad x^3y, x^3z, \quad
+x^2y^2, x^2yz, x^2z^2,\quad
+xy^3, xy^2z,xyz^2,xz^3,\quad
+y^4,y^3z,y^2z^2,yz^3,z^4.
+\]
+Donc au final $1+2+3+4+5=15$ monômes.
+
+Pour mener le calcul de manière abstraite, il faut choisir une façon de représenter les objets que l'on veut compter. Les monômes doivent avoir quatre facteurs, que l'on doit répartir entre trois variables : le problème revient donc à partager un lot de quatre objets en trois parties (éventuellement vides). Une façon de représenter ceci est de dessiner quatre billes et de placer des séparateurs entre les billes pour former les lots. Les monômes $xy^2z$, $xyz^2$, $x^3y$, $x^3z$ et $y^4$ correspondent alors à
+\[ \bullet \vert \bullet \bullet \vert \bullet,\quad
+\bullet \vert \bullet \vert \bullet \bullet, \quad 
+\bullet \bullet \bullet \vert\bullet\vert, \quad 
+\bullet \bullet \bullet \vert \vert \bullet \quad\text{et } 
+\bullet \bullet \bullet  \bullet \vert \vert
+\]
+
+Il y a donc six symboles (séparateurs ou billes), dont deux doivent être des séparateurs, et il y a donc $\binom{6}{2}=15$ monômes.
+\item Le même raisonnement fait aboutir à $n-1$ séparateurs parmi $n-1+d$ symboles, donc $\binom{n+d-1}{n-1}$ monômes.
+\end{enumerate}
+\end{solution}
+\end{exo}
+
+%\begin{exo}
+%On considère un univers $\Omega$ muni d'une probabilité $\mathbb P$. Soient $A$ et $B$ des évènements. Définir :
+%\begin{enumerate}
+%\item La probabilité conditionnelle de $A$ sachant $B$.
+%\item Le fait que $A$ et $B$ soient indépendants.
+%\end{enumerate}
+%\end{exo}
+
+\begin{exo}
+Chaque année, un disque dur à $5\%$ de chances de tomber en panne, quel que soit son âge. Quelle est la probabilité qu'il  tombe en panne au cours de la sixième année, sachant qu'il a déjà tenu trois ans ?
+\begin{solution}
+D'après l'énoncé, la probabilité de panne est indépendante de l'année., si le disque est en état de marche au début de l'année  Le fait qu'il ait tenu trois ans n'apporte donc pas d'information.
+
+La probabilité qu'il tombe en pane au cours de la sixième année est donc $\left(\frac{19}{20}\right)^2\times \frac{1}{20}$ : en effet il faut éviter les pannes les années $4$ et $5$ , et ensuite il faut qu'il y ait une panne l'année $6$.
+
+\emph{--- Rédaction alternative,  correcte mais inutilement compliquée vu l'indépendance :\\
+Soit $A$ l'évènement \og il y a une panne l'année $6$ (pour la première fois)\fg, et $B$ l'évènement \og le disque dur tient au moins trois ans sans panne\fg. Alors on a $\P(A)=\left(\frac{19}{20}\right)^5\times \frac{1}{20}$ et $\P(B)=\left(\frac{19}{20}\right)^3$.  Par ailleurs, $A\subset B$ donc $A\cap B = A$, donc :
+\[ \P(A\vert B) = \frac{\P(A\cap B)}{\P(B)}=\frac{\P(A)}{\P(B)}
+=\frac{\left(\frac{19}{20}\right)^5\times \frac{1}{20}}{\left(\frac{19}{20}\right)^3}
+=\left(\frac{19}{20}\right)^2\times \frac{1}{20}\]}
+\end{solution}
+\end{exo}
+
+\begin{exo}
+On lance trois dés (équilibrés à six faces). 
+Quelle est la probabilité d'obtenir trois chiffres différents ?
+\begin{solution}
+On modélise l'expérience par l'univers $\Omega=\{1,2\dots 6\}^3$, qui est de cardinal $6^3=216$.
+L'évènement $A$ correspondant à trois chiffres différents est de cardinal $6\times 5\times 4$. 
+On en déduit que la probabilité de $A$ est $\P(A)=\frac{6\times 5\times 4}{6^3}=\frac{20}{36}=\boxed{\frac{5}{9}}$ .
+\end{solution}
+\end{exo}
+
+\begin{exo}
+L'éditeur d'un antivirus annonce que la probabilité qu'une machine protégée soit tout de même infectée est de $10\%$. Un responsable informatique doit décider s'il équipe son parc de machines de ce logiciel.  Il décide d'installer l'antivirus sur un tiers de ses machines pour tester. 
+Après quelque temps, il constate que les machines saines et sans antivirus forment $60\%$ de son parc. 
+Doit-il acheter l'antivirus pour les machines non protégées ? (Ou au contraire désinstaller d'urgence?)
+\begin{solution}
+Après calculs, c'est indépendant. (Donc autant ne pas payer les licences supplémentaires.)
+
+FINIR DE RÉDIGER.
+\end{solution}
+\end{exo}
+
+
+\end{document}
