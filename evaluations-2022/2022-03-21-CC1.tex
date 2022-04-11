@@ -159,9 +159,20 @@ L'éditeur d'un antivirus annonce que la probabilité qu'une machine protégée 
 Après quelque temps, il constate que les machines saines et sans antivirus forment $60\%$ de son parc. 
 Doit-il acheter l'antivirus pour les machines non protégées ? (Ou au contraire désinstaller d'urgence?)
 \begin{solution}
-Après calculs, c'est indépendant. (Donc autant ne pas payer les licences supplémentaires.)
+Notons \og $+$\fg{} l'évènement \og machines infectées\fg, \og $-$\fg{} son complémentaire à savoir  l'évènement \og machines saines\fg{} et \og $P$\fg{} l'évènement \og machines protégées par l'antivirus.\fg.
 
-FINIR DE RÉDIGER.
+L'énoncé donne  trois informations, à savoir :
+\begin{enumerate}
+\item $\P(+\,|\,P)=\frac{1}{10} \text{ et donc automatiquement } \P(-\,|\,P)=\frac{9}{10}$.
+\item $\P(P)=\frac{1}{3}\text{ et donc automatiquement } \P(\bar P)=\frac{2}{3}$.
+\item Et finalement : $\P(- \text{ et }  \bar P) = \frac{6}{10}$.
+\end{enumerate}
+
+On en déduit
+\[ \P(-\vert \bar P) = \frac{\P(- \text{ et }  \bar P)}{\P(\bar P)}
+=\frac{6/10}{2/3}=\frac{9}{10}
+\]
+Donc $\P(-\vert \bar P)=\P(-\,\vert P)$ et donc être sain est indépendant d'être protégé par l'antivirus. Installer l'antivirus ne change donc rien, il est donc inutile de payer la licence pour l'installer sur le reste des machines.
 \end{solution}
 \end{exo}
 
