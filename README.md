@@ -1,6 +1,18 @@
 L2I-probas
 ==========
 
+CC2 : informations
+---
+
+Au programme du CC2 : dénombrement bien sûr, mais surtout probabilités : probas, probas conditionnelles, variables aléatoires discrètes, espérance, variance, écart-type etc.
+
+Il y aura de plus un exercice sur des probas continues, entièrement en bonus. Ceci permettra à ceux qui ont travaillé récemment ce thème de gagner quelques points supplémentaires. Ca sera un exercice du type "trouver la constante C pour que telle fonction définie par morceaux sur R soit une densité de probabilités, calculer sa fonction de répartition et la tracer sommairement, calculer son espérance, puis peut-être une question en plus.
+
+Il ne sera pas nécessaire de connaître les lois continues usuelles (exponentielle, gaussienne etc). Les calculs d'intégrales et primitives ne feront intervenir que des fonctions polynomiales.
+
+Le dénombrement sera minoritare mais il y aura un exercice dessus. Je vous conseille de travailler les TD, et de retravailler très attentivement la correction du premier partiel.
+
+
 CC1 : sujet et corrigé disponibles
 ---
 
