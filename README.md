@@ -4,7 +4,7 @@ L2I-probas
 CC2 : informations
 ---
 
-Au programme du CC2 : dénombrement bien sûr, mais surtout probabilités : probas, probas conditionnelles, variables aléatoires discrètes, espérance, variance, écart-type etc.
+Au programme du CC2 : dénombrement bien sûr, mais surtout probabilités : probas, probas conditionnelles, variables aléatoires *discrètes*, espérance, variance, écart-type etc.
 
 Il y aura de plus un exercice sur des probas continues, entièrement en bonus. Ceci permettra à ceux qui ont travaillé récemment ce thème de gagner quelques points supplémentaires. Ca sera un exercice du type "trouver la constante C pour que telle fonction définie par morceaux sur R soit une densité de probabilités, calculer sa fonction de répartition et la tracer sommairement, calculer son espérance, puis peut-être une question en plus.
 
