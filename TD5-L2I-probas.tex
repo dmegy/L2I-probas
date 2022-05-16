@@ -1,0 +1,107 @@
+\input{preambule}
+
+
+\begin{document}
+
+\titre{Feuille 5 : la fin}
+
+\begin{exo} L'objet de cet exercice est d'\'etudier une exp\'erience de tir \`a l'arc.
+\begin{enumerate}
+\item On effectue $100$ tirs et, pour chaque tir, on touche la cible avec probabilit\'e $0.2$. Notons $N$ le nombre de fois o\`u la cible a \'et\'e touch\'ee. Quelle est la loi de la variable al\'eatoire $N$ ? Donner son esp\'erance et sa variance.
+\item On s'int\'eresse maintenant \`a la proportion de tirs r\'eussis, c'est-\`a-dire au nombre de fois o\`u la cible a \'et\'e touch\'ee, divis\'e par le nombre total de lancers. On note $P$ cette proportion. Toujours pour $100$ lancers et une probabilit\'e $0.2$ de r\'eussite, quelle est l'esp\'erance et la variance de $P$ ? Que valent l'esp\'erance et la variance de $P$ lorsque le nombre de lancers tend vers l'infini ?
+\item Maintenant, imaginons que vous deviez tirer $n$ fois, et que votre probabilit\'e de r\'eussite pour un lancer soit \'egale \`a $\frac{\lambda}{n}$, o\`u $\lambda = 0.5$. Pour $n = 500$ lancers, quelle est l'esp\'erance et la variance de $N$? Vers quelles valeurs l'esp\'erance et la variance de $N$ convergent-elles lorsque le nombre de lancers $n$ tend vers l'infini?
+\end{enumerate}
+\end{exo}
+
+\bigskip
+
+\begin{exo} On effectue une suite de lancers indépendants à pile ou face. On ne sait pas si la pièce est truquée ou non, et on note donc $p$ la probabilité d'obtenir pile. \\
+Considérons la v.a~$X_i$ qui vaut~$1$ si pile sort au $i$-ème lancer et~$0$ si face sort au $i$-ème lancer. \\
+On note $\overline X_n=(X_1+X_2+\ldots+X_n)/n$.\\
+\noindent\textbf{a.} Rappeler l'espérance et la variance de $X_i$ (en fonction de $p$).\\
+\noindent\textbf{b.} En déduire l'espérance et la variance de $\overline X_n$.\\
+\noindent\textbf{c.} En utilisant l'inégalité de Markov (après avoir mis au carré l'inégalité $\left| \overline{X}_n -p \right| \geq \varepsilon$), montrer que :
+$$\P \left( \left| \overline{X}_n - p \right| \geq \varepsilon \right)\leq \frac{p(1-p)}{n\,\varepsilon^2}.$$
+%\noindent\textbf{d.} En déduire que : $$\P \left( \left| \overline{X}_n - p \right| \geq \varepsilon \right)\leq \frac{1}{4n\,\varepsilon^2}.$$\\
+\noindent\textbf{d.} On a effectué $1 000$ lancers et on a obtenu le résultat pile pour 60$\%$ des lancers. L'hypothèse selon laquelle la pièce est équilibrée vous semble t-elle plausible ? Justifiez votre réponse en donnant une majoration de $\P \left( \left| \overline{X}_n - 0.5 \right| \geq 0.1 \right)$ lorsque la pièce est supposée équilibrée.
+\end{exo}
+
+\bigskip
+
+\begin{exo} Un collège accueillant 500 élèves possède une cantine comprenant deux salles. On fait l'hypothèse que chaque élève qui mange choisit au hasard l'une des deux salles, indépendamment les uns des autres. On note $X$ la variable aléatoire correspondant au nombre d'élèves choisissant la première salle.\\
+\noindent\textbf{a.} Quelle est la loi de $X$ ? Par quelle loi peut-on l'approximer ?\\
+\noindent\textbf{b.} On note $Y={X-250\over \sqrt{125}}$. Montrer que l'on peut approcher $Y$ par une loi normale ${\cal N}(0,1)$. En déduire que :
+$\P(-1.96<Y<1.96)\approx 0.95$
+\\
+\noindent\textbf{c.} On suppose que chacune des deux salles dispose de $N$ places. Montrer que les élèves trouvent chacun une place à condition que $X$ soit tel que $500-N\leq X\leq N$. Exprimer ce que cela signifie pour $Y$.\\
+\noindent\textbf{d.} Déterminer la valeur de $N$ à prévoir pour que la probabilité que chaque élève trouve une place dans la salle qu'il a choisie soit supérieure à 0.95. (Réponse : 272).
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+On effectue un contrôle sur des pièces de un euro
+dont une proportion $p=0.05$ est fausse et sur des pièces 
+de 2 euros dont une proportion $p'=0.02$ est fausse.
+Il y a dans un lot $500$ pièces dont $150$ pièces de 
+un euro et $350$ pièces de 2 euros.
+
+\medskip
+
+\noindent\textbf{a.} On prend une pièce au hasard dans ce lot: quelle est la probabilité qu'elle soit fausse?\\
+\noindent\textbf{b.} Sachant que cette pièce est fausse, quelle est la probabilité qu'elle soit de un euro?
+
+\medskip
+
+\noindent On contrôle à présent un lot de 1000 pièces de un euro. Soit $X$ la variable aléatoire: ``nombre de pièces fausses parmi les 1000 pièces''.
+
+\medskip
+
+\noindent\textbf{c.} Quelle est la loi de $X$ ? Quelle est son espérance, son écart-type ? Par quelle loi normale peut-on approcher $X$?\\
+\noindent\textbf{d.} Exprimer la probabilité pour que $X$ soit compris entre 48 et 52, à l'aide d'une probabilité portant sur la loi normale $\mathcal N(0,1)$.
+\end{exo}
+
+\bigskip
+
+\begin{exo} Une fourmi se déplace sur les arêtes de la pyramide ABCDS. Depuis un sommet quelconque, elle se dirige au hasard (on suppose qu'il y a équiprobabilité) vers un sommet voisin ; on dit qu'elle ``fait un pas''.
+\begin{center}
+\includegraphics[scale=0.2]{pyramide.png}
+\end{center}
+La fourmi se trouve initialement en A. Pour tout nombre entier $n$ strictement positif, on note $S_n$ l'évènement ``la fourmi est au sommet $S$ après $n$ pas'', et $p_n$ la probabilité de cet évènement.
+\begin{enumerate}
+\item Après avoir fait deux pas, quelle est la probabilité qu'elle soit en A ? en B ? en S ?
+\item  Donner les valeurs de $p_0, p_1$ et $p_2$.
+\item En remarquant que $S_{n+1}=S_{n+1}\cap {\overline S_n}$, montrer que $p_{n+1}={1\over 3}(1-p_n)$
+\item Montrer par récurrence que pour tout entier $n$ strictement positif, on a:
+$$p_n= {1\over 4}\Big(1-\Big(-{1\over 3}\Big)^n\Big).$$
+En déduire $\lim_{n\rightarrow\infty} p_n$.
+\end{enumerate}
+\end{exo}
+
+\bigskip
+
+\begin{exo}
+Un contrat d'assurance automobile comporte trois tarifs de cotisation annuelle : Bas, Intermédiaire, Haut.\\
+La première année, l'assuré paye le tarif intermédiaire.
+\begin{itemize}
+\item S'il n'a pas été responsable d'un accident pendant une année, son tarif diminue l'année suivante (s'il est déjà au tarif bas, il y reste).
+\item S'il a été responsable d'un accident au cours d'une année, son tarif monte l'année suivante (s'il est déjà au tarif haut, il y reste).
+\end{itemize}
+La compagnie d'assurance estime à 10\% la probabilité qu'un assuré pris au hasard soit responsable d'un accident au cours d'une année.\\
+Quelle sera à long terme la répartition des assurés entre les trois catégories de tarif ?\end{exo}
+
+\bigskip
+
+\begin{exo} Trois boules blanches et trois boules noires sont réparties dans deux urnes,
+de manière à ce que chaque urne contienne trois boules. On dit que le système est à l'état
+$i$ (pour $i = 0, 1, 2, 3$) si la première urne contient $i$ boules blanches. \`A chaque étape, on tire
+une boule de chaque urne et on les échange d'urnes. Soit $X_n$ l'état du système au temps
+$n$. Expliquer pourquoi $(X_n)_{n\geq 0}$ est une cha\^ine de Markov et déterminer ses probabilités
+de transition. En moyenne, quelle proportion du temps la première urne ne contient-elle
+que des boules blanches ?
+\end{exo}
+
+\bigskip
+
+
+\end{document}
