@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[margin=2cm]{geometry}
+\usepackage[french]{babel}
+
+\usepackage{mathtools,amssymb,amsthm,comment,xcolor}
+\renewcommand{\P}{\mathbb P}
+
+\theoremstyle{definition}
+\newtheorem{exo}{Exercice}
+
+% pour afficher les solutions : 
+\newenvironment{solution}{\begin{quote}\color{teal}}{\end{quote}}
+% pour masquer les solutions:
+%\excludecomment{solution}
+
+
+\begin{document}
+\noindent Licence d'informatique \hfill Faculté des sciences de Nancy\\
+\noindent\rule{\linewidth}{1pt}
+\begin{center}
+Probabilités et statistiques\\
+Épreuve du 18 mai 2022\\
+Durée 1h30 --- Calculatrices et documents interdits\\
+Attention : toutes les réponses doivent être justifiées.
+\end{center}
+\noindent\rule{\linewidth}{1pt}
+
+
+
+
+\begin{exo}
+Les diagonales d'un polygone régulier sont les segments qui relient deux sommets non consécutifs. Par exemple, un carré possède deux diagonales, et un pentagone régulier possède cinq diagonales.
+
+\begin{enumerate}
+\item Combien de diagonales un polygone régulier à 6 côtés possède-t-il ?
+\item On fixe $N\geq 4$. Combien de diagonales un polygone régulier à $N$ côtés possède-t-il ? (Vérifiez votre résultat avec les calculs précédents!)
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+On jette deux dés à six faces équilibrés.
+\begin{enumerate}
+\item Quelle est la probabilité d'avoir obtenu au moins un cinq, sachant que la somme des deux dés est égale à dix ?
+\item Quelle est la probabilité d'avoir obtenu au moins un cinq, sachant que les résultats des deux dés sont différents ?
+\end{enumerate}
+\end{exo}
+
+
+
+\begin{exo}
+On considère une pièce de monnaie truquée, qui a une probabilité $1/3$ de retomber sur pile, et une probabilité $2/3$ de retomber sur face. On joue au jeu suivant. Le joueur paye $5$ euros pour avoir le droit de jouer. Dans ce cas, il lance trois fois la pièce et gagne $6$ euros à chaque fois qu'il obtient pile.
+On appellera $X$ la variable aléatoire représentant le nombre de pile.
+\begin{enumerate}
+\item Quelles valeurs peut prendre $X$ ? Donner la loi de $X$.
+\item Calculer l'espérance de $X$.
+\item Est-il rentable de jouer ?
+% espérance=1
+\end{enumerate}
+\end{exo}
+
+ \begin{exo} 
+ Une compagnie d'assurances a classé ses assurés en trois catégories suivant le risque : faible, moyen, et haut. Les statistiques montrent que la probabilité d'avoir un accident sur une période d'un an sont de $5\%$, $15\%$ et $30\%$ dans ces trois catégories. D'autre part on observe que $20\%$ des assurés sont dans la catégorie à bas risque, $50\%$ à risque moyen, et $30\%$ à haut risque.
+ \begin{enumerate}
+ \item Quelle est la probabilité d'avoir un accident (sur la période d'un an) ? 
+ \item Un certain assuré n'a pas d'accident sur la période d'un an. Quelle est la probabilité qu'il appartienne à la catégorie de risque faible ?
+ \end{enumerate}
+ \end{exo}
+
+\begin{exo}
+     Trois chasseurs tirent simultan\'ement sur 3 canards. On suppose que chaque chasseur , ind\'epen-damment des autres, choisit un canard au hasard et le tue.
+     On appelle $N$ la variable al\'eatoire \'egale au nombre de canards tu\'es. 
+     \begin{enumerate}
+     \item Calculer la loi de $N$.
+     \item Calculer l'espérance $\mathbb E(N)$.
+     \end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+
+On définit une fonction $g : \mathbb R\to \mathbb R$ de la façon suivante : si $t<-1$ ou $t>1$, alors $g(t)=0$. Par contre, si $t\in [-1,1]$, alors $g(t)=(1-t^2)^2$.
+
+\begin{enumerate}
+\item Que vaut $\displaystyle{ \int_{-\infty}^{+\infty} g(t)d\! t}$ ?
+\item Soit $C$ la constante telle que $\int_{-\infty}^{+\infty} Cg(t)dt=1$. Dans la suite, on définit la fonction $f$ par $f(t)=Cg(t)
+$ pour tout $t$. Montrer que $f$ est une densité de variable aléatoire réelle continue, que l'on note $X$.
+\item Calculer l'espérance de $X$.
+\item Calculer la variance de $X$.
+\end{enumerate}
+\end{exo}
+
+\end{document}
