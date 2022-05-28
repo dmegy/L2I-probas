@@ -6,6 +6,9 @@
 
 \usepackage{mathtools,amssymb,amsthm,comment,xcolor}
 \renewcommand{\P}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\V}{\mathbb V}
 
 \theoremstyle{definition}
 \newtheorem{exo}{Exercice}
@@ -37,6 +40,11 @@ Les diagonales d'un polygone régulier sont les segments qui relient deux sommet
 \item Combien de diagonales un polygone régulier à 6 côtés possède-t-il ?
 \item On fixe $N\geq 4$. Combien de diagonales un polygone régulier à $N$ côtés possède-t-il ? (Vérifiez votre résultat avec les calculs précédents!)
 \end{enumerate}
+\begin{solution}
+\begin{enumerate}
+\item On compte les diagonales et on en trouve neuf.
+\item Il y a $\binom{N}{2}$ façons de choisir deux sommets du polygone et de les relier. Parmi ces segments, il y en a $N$ qui sont les $N$ côtés du polygone. Le polygone possède donc $\binom{N}{2}-N = \frac{N(N-1)}{2}-N = \frac{N(N-3)}{2}$ diagonales.\end{enumerate}
+\end{solution}
 \end{exo}
 
 
@@ -46,6 +54,12 @@ On jette deux dés à six faces équilibrés.
 \item Quelle est la probabilité d'avoir obtenu au moins un cinq, sachant que la somme des deux dés est égale à dix ?
 \item Quelle est la probabilité d'avoir obtenu au moins un cinq, sachant que les résultats des deux dés sont différents ?
 \end{enumerate}
+\begin{solution}
+\begin{enumerate}
+\item Notons $A$ l'évènement \og avoir obtenu au moins un cinq\fg{} et $B$ l'évènement \og la somme des deux dés vaut $10$\fg. Alors $\P(A\cap B) = \frac{1}{36}$ et $\P(B)) = \frac{3}{36}$. Donc $P(A|B) = \frac{1}{3}$.
+\item Notons $C$ l'évènement \og avoir obtenu deux résultats différents\fg. On a $\P(A\cap C)=\frac{10}{36}$  et $\P(C) = \frac{30}{36}$, donc $\P(A|C)=\frac{10}{30} = \frac{1}{3}$.
+\end{enumerate}
+\end{solution}
 \end{exo}
 
 
@@ -59,6 +73,22 @@ On appellera $X$ la variable aléatoire représentant le nombre de pile.
 \item Est-il rentable de jouer ?
 % espérance=1
 \end{enumerate}
+\begin{solution}
+\begin{enumerate}
+\item $X$ peut prendre les valeurs $0$, $1$, $2$ et $3$. La loi de $X$ est:
+\[
+\P(X=0) = \left(\frac{2}{3}\right)^3=\frac{8}{27};\quad
+\P(X=1) = 3\times \frac{1}{3}\times  \left(\frac{2}{3}\right)^2 = \frac{4}{9};\quad
+\P(X=2) = 3\times \frac{2}{3}\times  \left(\frac{1}{3}\right)^2 = \frac{2}{9};\quad
+\P(X=3) = \left(\frac{1}{3}\right)^3=\frac{1}{27}.
+\]
+(On vérifie bien sûr que la somme de ces probabilités vaut bien $1$ : $\frac{8}{27}+\frac{12}{27} +\frac{6}{27}+\frac{1}{27}=1$.)
+\item L'espérance de X est $\E(X) =0\times  \frac{8}{27}+1\times \frac{12}{27} +2\times \frac{6}{27}+3\times \frac{1}{27} = \frac{27}{27}=1$. (On pouvait aussi reconnaître une loi binomiale de paramètres $n=3$ et $p=\frac{1}{3}$, l'espérance est donc $np=1$.)
+\item Le gain total du joueur est $Y=-5+6X$ (on paye $5$ euros pour jouer, et on gagne $X$ fois six euros). On en déduit que l'espérance de gain est 
+$\E(Y) = \E(-5+6X) = -5+6\E(X) = 1$.
+Il est donc rentable de jouer à ce jeu.
+\end{enumerate}
+\end{solution}
 \end{exo}
 
  \begin{exo} 
@@ -67,6 +97,40 @@ On appellera $X$ la variable aléatoire représentant le nombre de pile.
  \item Quelle est la probabilité d'avoir un accident (sur la période d'un an) ? 
  \item Un certain assuré n'a pas d'accident sur la période d'un an. Quelle est la probabilité qu'il appartienne à la catégorie de risque faible ?
  \end{enumerate}
+ 
+ \begin{solution}
+ Notons $F$, $M$ et $H$ les évènements correspondants aux catégories de risque faible, moyen et haut. Notons également $A$ l'évènement correspondant à un accident.
+ L'énoncé donne les informations suivantes :
+ \[
+ \P(A|F) = \frac{5}{100}=\frac{1}{20}, \:
+ \P(A|M) = \frac{15}{100}=\frac{3}{20}, \:
+ \P(A|H)=\frac{30}{100}=\frac{3}{10},
+ \]
+ \[
+ \P(F)=\frac{20}{100}=\frac{1}{5},\:
+ \P(M)=\frac{50}{100} =\frac{1}{2},\:
+ \P(H)=\frac{30}{100}=\frac{3}{10}.
+ \]
+ Le système des différents risques est un système complet d'évènements (les assuré sont dans une des trois catégories et une seule).
+\begin{enumerate}
+\item On écrit
+\begin{align*}
+\P(A)
+= \P(A|F)\P(F) + \P(A|M)\P(M)+\P(A|H)\P(H)
+&= \frac{1}{20}\times\frac{1}{5} + \frac{3}{20}\times\frac{1}{2}+\frac{3}{10}\times\frac{3}{10}\\
+&= \frac{1}{100}+\frac{3}{40}+\frac{9}{100}\\
+&= \frac{2+15+18}{200} = \frac{35}{200}=\boxed{\frac{7}{40}} \quad (=0,175)
+\end{align*}
+\item On veut calculer $\P(F|\bar A)$. On utilise la méthode habituelle, sachant que $\P(\bar A)$ se déduit de la question précédente :
+\begin{align*}
+\P(F|\bar A) = \frac{\P(F\cap \bar A)}{\P(\bar A)} 
+= \frac{\P(\bar A | F)\P(F)}{\P(\bar A)}
+= \frac{\P(\bar A | F)\P(F)}{1-\P(A)}
+=\frac{\frac{19}{20}\times\frac{1}{5}}{\frac{33}{40}}
+= \frac{19}{20}\times\frac{1}{5}\times\frac{40}{33}=\boxed{\frac{38}{165}} \quad (\sim 0,23)
+\end{align*}
+\end{enumerate}
+\end{solution}
  \end{exo}
 
 \begin{exo}
@@ -76,6 +140,18 @@ On appellera $X$ la variable aléatoire représentant le nombre de pile.
      \item Calculer la loi de $N$.
      \item Calculer l'espérance $\mathbb E(N)$.
      \end{enumerate}
+     
+     \begin{solution}
+\begin{enumerate}
+\item On a $\P(N=1)=3\times \frac{1}{27}=\frac{1}{9}$, $\P(N=3)=\frac{6}{27}$ ((il y a six permutations possibles pour les trois chasseurs), et donc, puisque la somme des probabilités doit valoir un, on a $\P(N=2)=\frac{18}{27}$. (Alternativement on peut compter les cas et ensuite vérifier que la somme des probabilités est bien égale à $1$.)
+\item \textbf{Première méthode} : calcul de l'espérance avec la formule du cours. On a 
+\[ \E(N) = \frac{1}{9}+2\times \frac{18}{27}+3\times\frac{6}{27} = \frac{3+36+18}{27} = \frac{57}{27}=\boxed{\frac{19}{9}}
+\]
+\textbf{Deuxième méthode}, sans utiliser la première question:\\
+Notons $C_1$ la variables aléatoire qui vaut $1$ si le premier canard est touché et $0$ sinon, et de même pour $C_2$ et $C_3$. La probabilité que  le premier canard survive vaut $\P(C_1=0)=(2/3)^3$, donc on a $\E(C_1)=1-(2/3)^3=\frac{19}{27}$. Les variables $C_2$ et $C_3$ ont la même loi et la même espérance puisque la situation est la même pour tous les canards. D'autre part, on a  $N=C_1+C_2+C_3$ et donc par linéarité de l'espérance, 
+$\E(N) = \E(C_1)+\E(C_2)+\E(C_3) = 3\E(C_1) =3\times \frac{19}{27} =\boxed{\frac{19}{9}}$
+\end{enumerate}
+\end{solution}
 \end{exo}
 
 
@@ -90,6 +166,33 @@ $ pour tout $t$. Montrer que $f$ est une densité de variable aléatoire réelle
 \item Calculer l'espérance de $X$.
 \item Calculer la variance de $X$.
 \end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+\item On a
+\[ \int_{-\infty}^{+\infty} g(t)d\! t= \int_{-\infty}^{-1} g(t)d\! t+ \int_{-1}^{1} g(t)d\! t+ \int_{1}^{+\infty} g(t)d\! t  = 
+0+\int_{-1}^{1} g(t)d\! t+0
+=\int_{-1}^{1} (1-t^2)^2d\! t
+\]
+\[
+=\int_{-1}^1 (t^4-2t^2+1)d\!t = \left[ \frac{t^5}{5} -\frac{2t^3}{3} +t \right]_{-1}^1=\boxed{\frac{16}{15}}\]
+\item D'après la question précédente,  on a $C=\frac{15}{16}$. On vérifie les trois points du \og cahier des charges\fg{} des densités de probabilités : la fonction $f$ est positive, continue par morceaux, et son intégrale sur $\R$ vaut $1$.
+\item L'espérance de la variable aléatoire $X$ vaut d'après le cours 
+\[ \E(X) = \int_{-\infty}^{+\infty} tf(t)d\!t
+=\int_{-1}^{1} (t^5-2t^3+t)d\!t=0,
+\]
+puisque  l'on intègre une fonction impaire entre $-1$ et $1$. Le résultat est cohérent avec le fait que la densité de probabilité est paire, c'est-à-dire symétrique par rapport à l'abscisse $x=0$.
+\item Par définition, la variance de $X$ vaut 
+\[ \V(X) = \E(X^2)-\E(X)^2 = \E(X^2) =  \int_{-\infty}^{+\infty} t^2f(t)d\!t 
+= \int_{-1}^{1}(t^6-2t^4+t^2)d\!t
+\]
+\[
+= \left[ \frac{t^7}{7} - \frac{2t^5}{5} + \frac{t^3}{3}\right]_{-1}^{1}
+=2\left( \frac{1}{7}-\frac{2}{5}+\frac{1}{3}\right)
+=2\left(\frac{15-42+35}{105}\right) = \boxed{\frac{16}{105}}
+\]
+\end{enumerate}
+\end{solution}
 \end{exo}
 
 \end{document}
