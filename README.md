@@ -1,17 +1,20 @@
 L2I-probas
 ==========
 
-CC3 : informations
+Seconde chance : informations
 ---
 
 Tout ce qu'on a fait, depuis le début du cours.
 
 Il y aura un peu plus de lois continues qu'au dernier partiel, où ça ne concernait qu'un exercice.
 
-Conseils de révisions : TD feuilles 1-4 et cours idem, chap 1-4.
+Conseils de révisions : 
+- toutes les variables aléatoires ne sont pas de Bernoulli (ou binomiales) : lisez les énoncés attentivement, ne cherchez pas à parser l'exo pour plaquer un exo-type dessus.
+- le concept de proba conditionnelle n'est pas encore bien compris : il y aura un ou deux exercices là-dessus à la seconde chance. Refaites des exos là-dessus si besoin.
+- la loi faible des grands nombres, le théorème central limite, la feuille 5 sont hors-programme de l'épreuve de seconde chance.
 
 
-CC1 : sujet et corrigé disponibles
+CC1, 2 et 3 : sujet et corrigé disponibles
 ---
 
 Dans [evaluation-2022](https://github.com/dmegy/L2I-probas/tree/main/evaluations-2022).
