@@ -6,8 +6,6 @@ Seconde chance : informations
 
 Tout ce qu'on a fait, depuis le début du cours.
 
-Il y aura un peu plus de lois continues qu'au dernier partiel, où ça ne concernait qu'un exercice.
-
 Conseils de révisions : 
 - toutes les variables aléatoires ne sont pas de Bernoulli (ou binomiales) : lisez les énoncés attentivement, ne cherchez pas à parser l'exo pour plaquer un exo-type dessus.
 - le concept de proba conditionnelle n'est pas encore bien compris : il y aura un ou deux exercices là-dessus à la seconde chance. Refaites des exos là-dessus si besoin.
