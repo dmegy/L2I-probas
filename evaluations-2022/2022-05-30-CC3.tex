@@ -1,0 +1,263 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage[margin=2cm]{geometry}
+\usepackage[french]{babel}
+
+\usepackage{pgfmath,tikz,mathtools,amssymb,amsthm,xcolor,multicol,comment}
+\usetikzlibrary{graphs}
+\renewcommand{\P}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\V}{\mathbb V}
+
+\theoremstyle{definition}
+\newtheorem{exo}{Exercice}
+
+% pour afficher les solutions : 
+\newenvironment{solution}{\begin{quote}\color{teal}}{\end{quote}}
+% pour masquer les solutions:
+%\excludecomment{solution}
+
+
+\begin{document}
+\noindent Licence d'informatique \hfill Faculté des sciences de Nancy\\
+\noindent\rule{\linewidth}{1pt}
+\begin{center}
+Probabilités et statistiques\\
+Épreuve du 31 mai 2022\\
+Durée 1h30 --- Calculatrices et documents interdits\\
+Attention : toutes les réponses doivent être justifiées.
+\end{center}
+\noindent\rule{\linewidth}{1pt}
+
+
+
+%\begin{exo}
+%Combien y a-t-il d'anagrammes du mot PROBLEME qui n'ont jamais deux lettre identiques adjacentes ?
+
+%\begin{solution}
+%on place les deux lettres $E$ mais pas côte-à-côte : il y a $\binom{8}{2}-7=28-7=21$ possibilités;
+%Ensuite on place les lettres restantes : il y a $6!=720$ possibilités.
+%Finalement, il y a $21\times 6!= 21\times 720=15120$ anagrammes satisfaisant la condition demandée.
+%\end{solution}
+
+%\end{exo}
+
+
+\begin{exo}% 1.16, page 23
+     \`A Nancy, la météo prévoit de la pluie avec probabilité $1/2$ tous les jours.
+     Les pr\'evisions m\'et\'eorologiques sont correctes avec les probabilités suivantes : la probabilit\'e qu'il pleuve sachant que la m\'et\'eo a pr\'evu de la pluie est de 2/3 tandis que la probabilit\'e qu'il ne pleuve pas sachant que la m\'et\'eo n'a pas pr\'evu de pluie est de 2/3.
+     Quand la météo annonce de la pluie, Bob prend son parapluie.
+     Quand il n'y a pas de pluie annonc\'ee, il le prend avec une probabilit\'e de 1/3, sans savoir quel temps il va vraiment faire.
+     \begin{enumerate}
+     	\item Quelle est la probabilité que Bob prenne son parapluie ? % 2/3
+           \item Sachant qu'il pleut, calculer la probabilité que Bob ait son parapluie sur lui. %7/9
+           \item Sachant que Bob sort avec son parapluie, calculer la probabilité qu'il ne pleuve pas.%5/12
+     \end{enumerate}
+     
+     \begin{solution}
+     Notons $M$ l'évènement \og la météo prévoit de la pluie\fg, $P$ l'évènement \og il pleut\fg{} et $U$ (pour l'évènement \og Bob prend son parapluie\fg.
+     L'énoncé donne les probabilités 
+     \[ \P(M)=1/2, \quad \P(P|M) = 2/3, \quad \P(\bar P | \bar M) = 2/3, \quad \P(U|M) = 1,\quad \P(U|\bar M) = 1/3.\]
+     On peut par exemple visualiser la situation sur les deux arbres suivants (on a entouré les probas données par l'énoncé, les autres s'en déduisent immédiatement), mais ce n'est pas obligatoire pour faire l'exercice:
+     \begin{center}
+     \begin{tikzpicture}[xscale=1/2,yscale=2]
+     \draw (-4,1) -- (-6,2) node[midway,fill=white] {$\boxed{2/3}$} node[fill=white] {$P$};      			     \draw (-4,1) -- (-2,2) node[midway,fill=white] {$1/3$} node[fill=white] {$\bar P$};
+     \draw (4,1) -- (2,2) node[midway,fill=white] {$1/3$} node[fill=white] {$P$};
+     \draw (4,1) -- (6,2) node[midway,fill=white] {$\boxed{2/3}$} node[fill=white] {$\bar P$};
+      
+      \draw (0,0) -- (-4,1) node[midway,fill=white] {$\boxed{1/2}$} node[fill=white] {$M$};
+      \draw (0,0) -- (4,1) node[midway,fill=white] {$1/2$}node[fill=white] {$\bar M$};
+     \end{tikzpicture}\hspace{2cm}
+     \begin{tikzpicture}[xscale=1/2,yscale=2]
+     \draw (-4,1) -- (-4,2) node[midway,fill=white] {$\boxed{1}$} node[fill=white] {$U$};      	
+     \draw (4,1) -- (2,2) node[midway,fill=white] {$\boxed{1/3}$} node[fill=white] {$U$};
+     \draw (4,1) -- (6,2) node[midway,fill=white] {$2/3$} node[fill=white] {$\bar U$};
+      
+      \draw (0,0) -- (-4,1) node[midway,fill=white] {$1/2$} node[fill=white] {$M$};
+      \draw (0,0) -- (4,1) node[midway,fill=white] {$1/2$}node[fill=white] {$\bar M$};
+     \end{tikzpicture}
+     \\
+     
+     Si besoin, ces deux arbres peuvent être visualisés en un seul arbre comme voici :\\
+     
+     \begin{tikzpicture}
+     
+      \draw (-6,2) -- (-6,4) node[midway,fill=white] {$1$} node[fill=white] {$U$};
+      \draw (-2,2) -- (-2,4) node[midway,fill=white] {$1$} node[fill=white] {$U$};
+       
+      \draw (2,2) -- (1,4) node[midway,fill=white] {$1/3$} node[fill=white] {$U$};
+      \draw (2,2) -- (3,4) node[midway,fill=white] {$2/3$} node[fill=white] {$\bar U$};
+      \draw (6,2) -- (5,4) node[midway,fill=white] {$1/3$} node[fill=white] {$U$};
+      \draw (6,2) -- (7,4) node[midway,fill=white] {$2/3$} node[fill=white] {$\bar U$};
+     
+     \draw (-4,1) -- (-6,2) node[midway,fill=white] {$2/3$} node[fill=white] {$P$};      			     \draw (-4,1) -- (-2,2) node[midway,fill=white] {$1/3$} node[fill=white] {$\bar P$};
+     \draw (4,1) -- (2,2) node[midway,fill=white] {$1/3$} node[fill=white] {$P$};
+     \draw (4,1) -- (6,2) node[midway,fill=white] {$2/3$} node[fill=white] {$\bar P$};
+      
+      \draw (0,0) -- (-4,1) node[midway,fill=white] {$1/2$} node[fill=white] {$M$};
+      \draw (0,0) -- (4,1) node[midway,fill=white] {$1/2$}node[fill=white] {$\bar M$};
+       
+     \end{tikzpicture}
+     \end{center}
+     
+     \begin{enumerate}
+     \item On a 
+     \[ \P(U) = \P(M)\P(U|M)+\P(\bar M)\P(U|\bar M) 
+     = \frac{1}{2}\times 1+\frac12\times \frac13 =  \frac12+\frac16=\frac{2}{3}.\]
+     \item On a cette fois
+     \[ \P(U|P) = \frac{\P(U\cap P)}{\P(P)} 
+     =  \frac{\P(M)\P(U\cap P|M) + \P(\bar M)\P(U\cap P|\bar M)}{\P(M)\P(P|M) + \P(\bar M)\P(P|\bar M)} 
+     = \frac{1/2\times 2/3\times 1+1/2\times 1/3\times 1/3}{1/2\times 2/3 + 1/2\times1/3}
+     = \frac{7/18}{1/2} = \frac{7}{9}.\]
+     \item Pour finir, on a 
+     \[ \P(\bar P | U) = \frac{\P(\bar P\cap U)}{\P(U)} 
+     = \frac{\P(M)\P(\bar P\cap U | M) + \P(\bar M)\P(\bar P\cap U | \bar M) }{\P(U)} 
+     = \frac{\frac12\times\frac13\times 1+\frac12\times\frac23\times\frac13}{2/3} = \frac{3+2}{12} = \frac{5}{12}.\]
+     \end{enumerate}
+     \end{solution}
+\end{exo}
+
+
+
+\begin{exo}
+Un parc informatique possède $100$ machines, dont $30$ sont infectées par un virus. L'administrateur ne connaît pas le nombre de machines infectées et décide d'en tester un certain nombre.
+
+On tire $5$  machines simultanément au hasard, et on note $X$ le nombre de machines infectées parmi ces  $5$ machines. Déterminer la loi de $X$.
+\begin{solution}
+L'expérience aléatoire consiste à tirer cinq machines parmi $100$, donc l'univers naturel équiprobable est de cardinal $\binom{100}{5}$.
+
+La variable aléatoire $X$ peut prendre comme valeurs $0$, $1$, ... $5$, et on a :
+\[ 
+\P(X=0)= \frac{\binom{70}{5}\binom{30}{0}}{\binom{100}{5}};\quad
+\P(X=1)= \frac{\binom{70}{4}\binom{30}{1}}{\binom{100}{5}};\quad
+\P(X=2)= \frac{\binom{70}{3}\binom{30}{2}}{\binom{100}{5}};\quad
+\dots
+\P(X=5)= \frac{\binom{70}{0}\binom{30}{5}}{\binom{100}{5}};\quad
+\]
+On ne demandait bien sûr pas de simplifier les fractions.
+\end{solution}
+\end{exo}
+
+ \begin{exo} 
+Soit $g : \R\to \R$ la fonction définie comme suit:
+\begin{multicols}{2}
+\[g(t)=\begin{cases} 1-t \text{ si }t\in [0,1]\\ 1+t/2 \text{ si } t\in [-2,0]\\ 0 \text{ sinon}\end{cases}\]
+
+\columnbreak
+
+\begin{center}
+\begin{tikzpicture}
+\draw [very thin, gray] (-3.5,-0.5) grid (3.5,1.5);
+\draw[very thick] (-3.5,0) -- (-2,0) -- (0,1) -- (1,0) -- (3.5,0);
+\draw (0,0) node {$\bullet$};
+\end{tikzpicture}
+\end{center}
+\end{multicols}
+
+\begin{enumerate}
+\item Que vaut $\int_{-\infty}^{+\infty} g(t)dt $?
+\item Soit $C$ le nombre réel tel que $\int_{-\infty}^{+\infty} Cg(t)dt=1$, et posons $f(t)=Cg(t)$. Vérifier que $f$ est la densité de probabilité d'une certaine variable aléatoire, notée $X$.
+\item Quelle est l'espérance de $X$ ?
+\item Calculer $\P(X>0)$.
+\item Calculer la probabilité que $X>0$ sachant que $X\geq -1$.
+\end{enumerate}
+\begin{solution}
+\begin{enumerate}
+\item On a $\int_{-\infty}^{+\infty} g(t)dt  = 1+\frac12=\frac{3}{2}$
+\item Notons que d'après la question précédente, $C=\frac23$. La fonction $f$ est continue par morceaux, positive, et son intégrale vaut $1$, donc c'est une densité de probabilité.
+\item L'espérance de $X$ vaut $\int_{\R}tf(t)dt=C\int_{\R}tg(t)dt = \frac23 \int_{\R}tg(t)dt$. Calculons donc $\int_{\R}tg(t)dt$ :
+\begin{align*}
+\int_{\R}tg(t)dt
+&=\int_{-\infty}^{-2}tg(t)dt+\int_{-2}^0 tg(t)dt+\int_{0}^{1} tg(t)dt+\int_{1}^{+\infty} tg(t)dt\\
+&=0+\int_{-2}^{0}t(1+t/2)dt+\int_0^1t(1-t)dt+0\\
+&=\left[t^2/2+t^3/6\right]_{-2}^{0} + \left[t^2/2-t^3/3\right]_0^{1}\\
+&=-(4/2+(-2)^3/6)+(1/2-1/3) = -2/3+1/6=-1/2.
+\end{align*}
+On en déduit que $\E(X)=C\int_{\R}tg(t)dt=\boxed{-\frac{1}{3}.}$
+\item On a $\P(X>0)=\int_{0}^{+\infty} f(t)dt =\int_0^1 f(t)dt= C\int_0^1g(t)dt=\frac{C}{2}=\boxed{\frac{1}{3}.}$
+\item On a, d'après la formule pour les probabilités conditionnelles :
+\[\P(X>0|X\geq -1) = \frac{\P(X>0)}{\P(X\geq -1)}
+=\frac{\int_{0}^{+\infty}f(t)dt}{\int_{-1}^{+\infty}f(t)dt}
+=\frac{C\int_{0}^{+\infty}g(t)dt}{C\int_{-1}^{+\infty}g(t)dt}
+=\frac{1/2}{3/4+1/2} =\boxed{\frac{2}{5}.}
+\]
+\end{enumerate}
+\end{solution}
+ \end{exo}
+ 
+ \begin{exo}
+ Une entreprise commercialise une offre d'hébergement cloud avec un système de redondance (type RAID) intégré pour limiter les accidents.
+L'originalité de l'entreprise tient à ce que les clients peuvent choisir la façon dont fonctionne la redondance, parmi deux choix possibles : le système utilisera soit quatre disques durs de 1 To, soit deux disques durs de 2 To, et le système de redondance fonctionne du moment qu'au moins $50\%$ des disques  fonctionnent correctement.
+Tous les disques durs, quelle que soit leur capacité, ont la même probabilité de tomber en panne, de façon indépendante les uns des autres. On note $p$ cette probabilité.
+\begin{enumerate}
+\item On suppose que $p=1/2$. Laquelle des deux solutions faut-il choisir ?
+\item Pour quelles valeurs de $p$ faut-il choisir le système à deux grands disques durs, et pour quelles autres valeurs de $p$ faut-il choisir le système à quatre petits disques durs ? (Indication : la réponse dépend des racines d'un trinôme simple en $p$).
+\end{enumerate}
+
+\begin{solution}%
+
+\begin{enumerate}
+\item Avec les deux grands disques durs, la probabilité de dysfonctionnement, c'est-à-dire la probabilité que les deux tombent en panne est de $1/4$.
+Avec les quatre petits disques durs, la probabilité de dysfonctionnement, c'est-à-dire la probabilité qu'au moins trois disques durs tombent en panne est de $4\times 1/2^4+ 1/2^4=5/16>1/4$.
+ Il vaut mieux prendre le système à deux disques durs, qui a moins de chances de dysfonctionner.
+\item Il s'agit du cas général.
+La probabilité de dysfonctionnement avec deux disques est de $f(p)=p^2$.
+Pour quatre disques, la probabilité de dysfonctionnement est de $g(p)=4p^3(1-p)+p^4=4p^3-3p^4$.
+Il s'agit donc de voir pour quels $p$ est-ce que $f\geq g$.\\
+Pour cela, on étudie la différence $h(p)=f(p)-g(p) = p^2 -4p^4+3p^4= p^2(1-4p+3p^2)$.
+Le trinôme $1-4p+3p^2$ s'annule en $\frac{4\pm \sqrt{16-12}}{6} = \frac{2}{3}\pm \frac{1}{3}$, autrement dit en $1/3$ et en $1$.\\% (On peut aussi factoriser de tête $3p^2-4p+1=(p-1)(3p-1)$.)\\
+Il est positif si $p<1/3$, négatif si $1/3<p<1$ et positif si $p>1$ mais ce cas ne nous intéresse pas car $p$ est une probabilité donc $0\leq p\leq 1$.
+Donc si $0<p<1/3$, on a $h\geq 0$ et donc $f\geq g$, autrement dit il faut choisir la solution avec quatre disques durs. Si par contre $p>1/3$, il vaut mieux choisir la solution avec deux disques durs. Notons que le résultat de la première question est cohérent avec cette réponse.
+\end{enumerate}
+
+\end{solution}
+
+ \end{exo}
+
+
+
+
+\begin{exo}
+On tire trois nombres entiers $a$, $b$ et $c$ aléatoirement pour la loi uniforme sur $\{-1,0,1\}$\footnote{Il y avait une faute de frappe dans l'énoncé : $\{-1,01\}$ (une virgule manquante). L'erreur a été corrigée pendant l'épreuve, mais pour ceux qui auraient interprété comme ${-1,1}$ et correctement mené le raisonnement et fait les calculs, on n'a pas pénalisé.}. On forme ensuite le polynôme $P(X)=aX^2+bX+c$. C'est donc un \og polynôme aléatoire\fg, au sens où ses coefficients sont aléatoires.
+\begin{enumerate}
+\item Quelle est la probabilité que $P$ soit un trinôme du second degré ?
+\item Sachant que $P$ est un trinôme du second degré, quelle est la probabilité qu'il ait deux racines réelles distinctes ?
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}
+\item Le mot \og trinôme\fg{} pouvait éventuellement être interprété de plusieurs manières (somme de trois monômes non nuls, ou bien terme générique pour désigner un polynôme du type $ax^2+bx+c$ y compris lorsque les réles $a$, $b$ ou $c$ sont nuls. Les deux interprétations ont été accpetées. Le polynôme $P$ est un polynôme du second degré si et seulement si $a\neq 0$. La probabilité que ce soit le cas est donc de $2/3$.  Si on veut que les trois monômes soient tous non nuls, la proba est de $8/27$.
+\item Si $a\neq 0$, le trinôme $P$ possède deux racines réelles distinctes si et seulement si $b^2-4ac> 0$. Dénombrons ces cas :\\
+Si $a=1$, il y a neuf cas pour $b$ et $c$, on calcule dans chaque des cas $b^2-4ac=b^2-4c$ ($b$ en abscisse, $c$ en ordonnée) :
+\begin{center}
+\begin{tikzpicture}
+\foreach \i in {-1,0,1}{
+	\foreach \j in {-1,0,1}{
+		\pgfmathsetmacro{\d}{\i*\i-4*\j};
+		\draw (\i*4,\j) node {$(\i)^2-(\j\times 4) = \d$ };
+		}
+}
+\end{tikzpicture}
+\end{center}
+Si $a=-1$, il y a à nouveau neuf cas pour $b$ et $c$, on calcule dans chaque des cas $b^2-4ac=b^2+4c$ ($b$ en abscisse, $c$ en ordonnée) :
+\begin{center}
+\begin{tikzpicture}
+\foreach \i in {-1,0,1}{
+	\foreach \j in {-1,0,1}{
+		\pgfmathsetmacro{\d}{\i*\i+4*\j};
+		\draw (\i*4,\j) node {$(\i)^2+(\j\times 4) = \d$ };
+		}
+}
+\end{tikzpicture}
+\end{center}
+Finalement, la proba qu'il y ait deux racines réelles distinctes (sachant qu'on a un trinôme) est de $5/9$.
+\end{enumerate}
+\end{solution}
+
+\end{exo}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
