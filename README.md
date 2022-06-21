@@ -13,7 +13,7 @@ Ainsi que les documents récupérés des années précédentes :
 
 - les annales que j'ai pu récupérer, dans [annales/](https://github.com/dmegy/L2I-probas/tree/main/annales)
 - les chapitres de cours des années précédentes, avec éventuellement modifications
-- Les évaluationdes l'année 2021-2022, dans [evaluation-2022](https://github.com/dmegy/L2I-probas/tree/main/evaluations-2022).
+- Les évaluations de l'année 2021-2022, dans [evaluation-2022/](https://github.com/dmegy/L2I-probas/tree/main/evaluations-2022).
 
 
 Présentation du cours :
