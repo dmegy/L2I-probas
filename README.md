@@ -1,23 +1,6 @@
 L2I-probas
 ==========
 
-Seconde chance : informations
----
-
-Tout ce qu'on a fait, depuis le début du cours.
-
-Conseils de révisions : 
-- toutes les variables aléatoires ne sont pas de Bernoulli (ou binomiales) : lisez les énoncés attentivement, ne cherchez pas à parser l'exo pour plaquer un exo-type dessus.
-- le concept de proba conditionnelle n'est pas encore bien compris : il y aura un ou deux exercices là-dessus à la seconde chance. Refaites des exos là-dessus si besoin.
-- la loi faible des grands nombres, le théorème central limite, la feuille 5 sont hors-programme de l'épreuve de seconde chance.
-
-
-CC1, 2 et 3 : sujet et corrigé disponibles
----
-
-Dans [evaluation-2022](https://github.com/dmegy/L2I-probas/tree/main/evaluations-2022).
-
-
 
 Contenu du repo :
 -----
@@ -30,6 +13,8 @@ Ainsi que les documents récupérés des années précédentes :
 
 - les annales que j'ai pu récupérer, dans [annales/](https://github.com/dmegy/L2I-probas/tree/main/annales)
 - les chapitres de cours des années précédentes, avec éventuellement modifications
+- Les évaluationdes l'année 2021-2022, dans [evaluation-2022](https://github.com/dmegy/L2I-probas/tree/main/evaluations-2022).
+
 
 Présentation du cours :
 -----
